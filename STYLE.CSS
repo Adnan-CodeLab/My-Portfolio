@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #612E51;
+}
+
+.container {
+  max-width: 700px;
+  margin-left:2rem;
+  padding: 2rem;
+}
+
+.intro-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #E9B020;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+}
+
+.intro-list li {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* White bullet points */
+.intro-list li::marker {
+  color: #ffffff;
+}
+
+p{
+  color: #ffffff;
+  font-size:60px;
+  font-weight:900;
+  text-decoration:underline;
+}
+
+.octagon-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  display: flex;
+  margin-top:-35rem;
+  margin-right:1rem;
+}
+
+.octagon-glow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* The actual image */
+.octagon-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Glowing border effect */
+.octagon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  background: conic-gradient(
+    from 0deg,
+    #E9B020,
+    #ffffff,
+    #E9B020,
+    #ffffff,
+    #E9B020
+  );
+  clip-path: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
+  z-index: 0;
+  animation: spinGlow 4s linear infinite;
+  filter: blur(12px);
+  opacity: 0.8;
+}
+
+@keyframes spinGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-footer {
+  background-color: #612E51;
+  color: #E9B020;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 15rem;
+  padding-bottom: 4rem;
+}
+
+.contact-footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  grid-template-columns: repeat(2, 160px); /* or auto-fit */
+}
+
+.contact-grid a {
+  display: block;
+  padding: 0.8rem;
+  background-color: #E9B020;
+  color: #612E51;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-grid a:hover {
+  background-color: #ffffff;
+  color: #612E51;
+  box-shadow: 0 0 12px #e9b020, 0  0  20px #E9B02066;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
