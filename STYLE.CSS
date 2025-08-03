@@ -165,3 +165,52 @@ p{
   opacity: 1;
   transform: translateY(0);
 }
+
+ @media (max-width: 768px) {
+            p {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .intro-list {
+                font-size: 1rem;
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .octagon-wrapper {
+                width: 200px;
+                height: 200px;
+                margin: 2rem auto;
+                margin-top: 1rem;
+            }
+
+            .contact-footer h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+                margin-left: 1rem;
+            }
+
+            .intro-list {
+                font-size: 0.95rem;
+            }
+
+            .octagon-wrapper {
+                width: 180px;
+                height: 180px;
+            }
+
+            .contact-footer {
+                padding: 1rem;
+            }
+        }
